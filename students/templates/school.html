@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block method_content %}
+    <body>
+        <form method="post" class="col-md-4 col-md-offset-4">
+            {% csrf_token %}
+            <h3>School Registration Form</h3>
+            <br></br>
+                <div class="form-group">
+                <label >Name</label>
+                {{ form.name }}
+                </div>
+                <label >Phone Number</label>
+                {{ form.phone_number }}
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </body>
+{% endblock method_content %}

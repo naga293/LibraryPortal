@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block method_content %}
+    <body>
+
+        <form method="post" class="col-md-4 col-md-offset-4">
+            {% csrf_token %}
+            <h3>Student Registration Form</h3>
+            <br></br>
+                <div class="form-group">
+                <label >First Name</label>
+                {{ form.first_name }}
+                </div>
+                <div class="form-group">
+                <label>Last Name</label>
+                {{form.last_name}}
+                </div>
+                <div class="form-group">
+                <label class="form-group">Gender</label>
+                {{form.gender}}
+                </div>
+                <div class="form-group">
+                    <label class="form-group">School</label>
+                    {{form.school}}
+                </div>
+                <div class="form-group">
+                    <label class="form-group">Mail</label>
+                    {{form.mail}}
+                </div>
+                <div class="form-group">
+                    <label class="form-group">Books</label>
+                    {{form.books}}
+                </div>
+                <div class="form-group">
+                    <label class="form-group">No Of Pages Read</label>
+                    {{form.no_of_pages_read}}
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </body>
+{% endblock method_content %}

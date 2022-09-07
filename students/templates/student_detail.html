@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block method_content %}
+    <body>
+    <div class="col-md-4 col-md-offset-4">
+        <h3>Student Details</h3>
+
+        <p><strong>First Name:</strong> {{ student.first_name}}</p>
+
+        {% if  student.last_name != None %}
+            <p><strong>Last Name:</strong> {{ student.last_name}}</p>
+        {% else %}
+            <p><strong>Last Name:</strong> </p>
+        {% endif %}
+
+        {% if  student.mail != None %}
+            <p><strong>Email:</strong> {{  student.mail }}</p>
+        {% else %}
+        <p><strong>Email:</strong> </p>
+        {% endif %}
+
+        {% if  student.gender != None %}
+            <p><strong>Gender:</strong> {{  student.gender }}</p>
+        {% else %}
+            <p><strong>Gender:</strong> </p>
+        {% endif %}
+
+        {% if  student.school.name != None %}
+            <p><strong>School:</strong> {{ student.school.name }}</p>
+        {% else %}
+            <p><strong>School:</strong> </p>
+        {% endif %}
+
+        {% if  student.school.phone_number != None %}
+            <p><strong>School Phone No:</strong> {{ student.school.phone_number }}</p>
+        {% else %}
+            <p><strong>School Phone No:</strong> </p>
+        {% endif %}
+
+        <p><strong>Books:</strong> 
+            {% for books in student.books.values %}
+            <li> {{books.name}}</li>
+            {% endfor %}
+        </p>
+        
+        {% if  student.no_of_pages_read != None %}
+            <p><strong>No Of Pages Read:</strong> {{student.no_of_pages_read }}</p>
+        {% else %}
+            <p><strong>No Of Pages Read:</strong> </p>
+        {% endif %}
+    </div>
+</body>
+{% endblock method_content %}
